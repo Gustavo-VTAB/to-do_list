@@ -1,7 +1,7 @@
 <?php
     
     $hostname = 'localhost';
-    $port = '3307';
+    $port = '9000';
     $database = 'to_do_list';
     $username = 'root';
     $password = 'admin';
