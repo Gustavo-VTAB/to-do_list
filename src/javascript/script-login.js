@@ -11,7 +11,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: 'http://localhost/to-do_list/actions-for-account/login.php',
+            url: '../../list-tarefas.php',
             type: 'POST',
             data: { email: email, senha: senha },
             dataType: 'json',

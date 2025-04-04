@@ -66,7 +66,7 @@ if (isset($_SESSION['userId'])) {
             echo json_encode([
                 'erro' => false,
                 'msg' => "Usuário cadastrado com sucesso",
-                'redirect' => $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/list-tarefas.php'
+                'redirect' => '../list-tarefas.php'
             ]);
 
         }else{
