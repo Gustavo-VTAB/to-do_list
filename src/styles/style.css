@@ -1,0 +1,258 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family:  "Roboto Condensed", sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #faf7e4;
+
+}
+
+#to_do{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #CCD5AE;
+    padding: 18px;
+    border-radius: 8px;
+    width: 530px;
+}
+
+#to_do h1{
+    color: #080808;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.filters{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 4px 0px;
+}
+.filters select{
+    background-color: #FAEDCD;
+    border: none;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 16px;
+    width: 40%;
+    padding: 4px;
+    border-bottom: 2px solid #fefee0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+}
+
+
+.to-do-form{
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.to-do-form input {
+    background-color: transparent;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    width: 100%;
+    padding: 4px;
+    border-bottom: 2px solid #fefee0;
+}
+
+.form-cad input{
+    background-color: #f8f7f1;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    width: 100%;
+    padding: 4px;
+   
+}
+
+.form-cad label{
+    color: #413b2a;
+    font-size: 16px;
+    width: 100%;
+    font-weight: 600;
+    padding: 4px;
+}
+
+.form-cad button{
+    background-color:#CCD5AE;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    margin-top: 5%;
+    width: 100%;
+    padding: 4px;
+    border-radius: 5px;
+    transition: ease 0.5s;
+}
+
+.form-cad button:hover{
+    cursor: pointer;
+    background-color: #faedcd;
+    color: #000000;
+    font-weight: 700;
+    scale: 1.05;
+
+
+}
+
+.form-cad a{
+    text-decoration: none;
+    color: #CCD5AE;
+    font-size: 16px;
+    width: 100%;
+    padding: 4px;
+    transition: ease 0.5s;
+}
+
+.form-cad a:hover{
+    text-decoration: none;
+    font-size: 18px;
+    color: #929686;
+    font-weight: 500;
+    scale: 1.05;
+    width: 100%;
+    padding: 4px;
+}
+
+.to-do-form input:focus-visible{
+    outline: none;
+}
+
+.to-do-form input:focus{
+    display: flex;
+    width: 100%;
+}
+
+.to-do-form2 select{
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 16px;
+    width: 40%;
+    padding: 4px;
+    border-bottom: 2px solid #fefee0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+}
+
+.to-do-form2 select:focus-visible{
+    outline: none;
+}
+
+.to-do-form2 input{
+    background-color: transparent;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    width: 46%;
+    margin-left: 4%;
+    padding: 4px;
+    border-bottom: 2px solid #fefee0;
+}
+
+
+
+.to-do-form .form-button{
+    border: none;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    transition: scale 0.5s ease;
+
+}
+
+.to-do-form .form-button:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
+
+#tasks{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #080808;
+    background-color: #FAEDCD;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.task .progress{
+    margin-right: 10px;
+}
+
+.task .progress.done + .task-description{
+     text-decoration: line-through;
+     color: #596464   ;
+}
+
+
+.task .task-description{
+    font-size: 16px;
+    color: #080808;
+    padding: 4px 0px;
+    width: 100%;
+
+}
+
+.task .task-status{
+    font-size: 16px;
+    color: #080808;
+    padding:0px 5px 0px 20px;
+    width: 100%;
+}
+
+.task .task-date{
+    font-size: 16px;
+    color: #080808;
+    padding-right: 5px;
+}
+
+.task .task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button{
+    font-size: 16px;
+    color: #171515;
+}
+
+.hidden{
+    display: none !important;
+}
+
+
+
+@media screen and (max-width:600px) {
+    #to_do{
+        width: 300px;
+    }
+    
+}
