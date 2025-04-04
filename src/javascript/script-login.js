@@ -11,13 +11,13 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: '../../actions-for-account/login.php',
+            url: 'https://to-dolist-production-0697.up.railway.app/actions-for-account/login.php',
             type: 'POST',
             data: { email: email, senha: senha },
             dataType: 'json',
             success: function (resposta) {
                 if (resposta.status === "success") {
-                    window.location.href = "../../list-tarefas.php"; // Página pós-login
+                    window.location.href = "https://to-dolist-production-0697.up.railway.app/list-tarefas.php"; // Página pós-login
                 } else {
                     $('#resposta').html('<div class="alert alert-danger">' + resposta.message + '</div>');
                 }

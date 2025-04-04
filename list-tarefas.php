@@ -131,7 +131,7 @@
 
 
                     
-        <script src="src/javascript/script.js"></script>
+        <script src="https://to-dolist-production-0697.up.railway.app/src/javascript/script.js"></script>
     </body>
     </html>
 

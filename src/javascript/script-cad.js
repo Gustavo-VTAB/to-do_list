@@ -11,24 +11,15 @@
         const dadosForm = new FormData(cadForm);
         dadosForm.append("add", 1);
         
-        const dados = await fetch("./actions-for-account/create.php", {
+        const dados = await fetch("https://to-dolist-production-0697.up.railway.app//actions-for-account/create.php", {
             method:"POST",
             body: dadosForm,
         });
 
-        const texto = await dados.text(); // pega como texto cru
-console.log("Resposta crua:", texto); // imprime pra gente ver
-
-    let resposta;
-    try {
-        resposta = JSON.parse(texto); // tenta converter pra JSON
-    } catch (e) {
-        console.error("Erro ao converter JSON:", e);
-        return;
-    }
+    
 
     
-        //const resposta = await dados.json(); 
+        const resposta = await dados.json(); 
         
         console.log(resposta);
     

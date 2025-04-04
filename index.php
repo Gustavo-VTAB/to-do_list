@@ -119,7 +119,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./src/javascript/script-login.js"></script>
+    <script src="https://to-dolist-production-0697.up.railway.app/src/javascript/script-login.js"></script>
 </body>
 
 </html>
