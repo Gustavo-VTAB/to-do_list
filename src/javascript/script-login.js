@@ -11,13 +11,13 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: '../../list-tarefas.php',
+            url: '../../actions-for-account/login.php',
             type: 'POST',
             data: { email: email, senha: senha },
             dataType: 'json',
             success: function (resposta) {
                 if (resposta.status === "success") {
-                    window.location.href = "http://localhost/to-do_list/list-tarefas.php"; // Página pós-login
+                    window.location.href = "../../list-tarefas.php"; // Página pós-login
                 } else {
                     $('#resposta').html('<div class="alert alert-danger">' + resposta.message + '</div>');
                 }
