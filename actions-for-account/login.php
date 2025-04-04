@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user && $sql->rowCount() > 0) {
         // Se o usuário existe, cria a sessão
         $_SESSION['user'] = $user['user_name'];
-        echo json_encode(["status" => "success", "message" => "Login realizado com sucesso!"]);
+        echo json_encode(["status" => "success", "message" => "Login realizado com sucesso!" ]);
     } else {
         echo json_encode(["status" => "error", "message" => "E-mail ou senha incorretos."]);
     }

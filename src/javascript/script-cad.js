@@ -15,8 +15,20 @@
             method:"POST",
             body: dadosForm,
         });
+
+        const texto = await dados.text(); // pega como texto cru
+console.log("Resposta crua:", texto); // imprime pra gente ver
+
+    let resposta;
+    try {
+        resposta = JSON.parse(texto); // tenta converter pra JSON
+    } catch (e) {
+        console.error("Erro ao converter JSON:", e);
+        return;
+    }
+
     
-        const resposta = await dados.json(); 
+        //const resposta = await dados.json(); 
         
         console.log(resposta);
     
