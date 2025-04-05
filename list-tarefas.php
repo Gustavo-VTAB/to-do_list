@@ -36,7 +36,7 @@
     <body>
         <div id="to_do">
 
-        <h1>Lista de tarefas, Olá <?= htmlspecialchars($_SESSION['user'] ?? 'Usuário') ?></h1>
+        <h1>Lista de tarefas, Olá <?= htmlspecialchars($_SESSION['user']['name'] ?? 'Usuário') ?></h1>
 
 
             <div class="filters">
