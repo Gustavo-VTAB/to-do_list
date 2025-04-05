@@ -1,13 +1,12 @@
 <?php
 session_start();
-require_once('../database/conn.php'); // Caminho local para o seu banco
-; // Conexão com o banco
+header('Content-Type: application/json');
 
-//limpa as variáveis de sessão
-if (isset($_SESSION['userId'])) {
-    unset($_SESSION['userId']);
-    unset($_SESSION['userNome']);
-}
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+require_once('../database/conn.php'); // Caminho local para o seu banco
+ // Conexão com o banco
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);

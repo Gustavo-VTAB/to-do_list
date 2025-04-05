@@ -16,15 +16,16 @@ $(document).ready(function () {
             data: { email: email, senha: senha },
             dataType: 'json',
             success: function (resposta) {
+                console.log(resposta); // ← Adicione isso para ver o que volta
                 if (resposta.status === "success") {
-                    window.location.href = "https://to-dolist-production-0697.up.railway.app/list-tarefas.php"; // Página pós-login
+                    window.location.href = "https://to-dolist-production-0697.up.railway.app/list-tarefas.php";
                 } else {
                     $('#resposta').html('<div class="alert alert-danger">' + resposta.message + '</div>');
                 }
             },
-            error: function () {
+            error: function (xhr, status, error) {
                 $('#resposta').html('<div class="alert alert-danger">Erro ao processar o login.</div>');
-                console.log(resposta);
+                console.log(xhr.responseText); // aqui mostra a resposta real do servidor
             }
         });
     });

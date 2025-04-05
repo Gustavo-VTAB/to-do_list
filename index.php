@@ -28,8 +28,8 @@
                 </div>
                 <div class="d-grid">
                     <button type="submit" class="btn btn-primary">Entrar</button>
+                    <div id="resposta" class="mt-3"></div>
                 </div>
-                <div id="resposta" class="mt-3"></div>
                 <div class="text-center">
                     <a  href="./criar-conta.php">Não tem conta? Crie uma!</a>
                 </div>
