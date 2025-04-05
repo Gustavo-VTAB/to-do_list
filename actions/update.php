@@ -7,6 +7,7 @@ $description = filter_input(INPUT_POST, 'description');
 $id = filter_input(INPUT_POST, 'id'); 
 
 
+
 if($description && $id){
     $sql = $pdo->prepare("UPDATE task SET description = :description WHERE id = :id"); // Prepara a query para editar a tarefa no banco de dados
     $sql->bindValue(':description', $description); //faz o bind do valor

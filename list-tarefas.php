@@ -9,7 +9,13 @@
 
         $tasks = [];
 
-        $sql = $pdo->query("SELECT * FROM task ORDER BY id ASC"); // Seleciona todas as tarefas do banco de dados
+        $userId = $_SESSION['user']['id']; // Pega o id do usuário logado
+
+        
+        $sql = $pdo->prepare("SELECT * FROM task WHERE user_id = :user_id ORDER BY id ASC");
+        $sql->bindValue(':user_id', $userId, PDO::PARAM_INT);
+        $sql->execute();
+
 
         // Verificando se existem tarefas cadastradas
         if($sql->rowCount() > 0){ 
@@ -73,7 +79,16 @@
             </form>
 
             <div id="tasks">
-                <?php foreach($tasks as $task): ?>
+            
+            <!-- verifica se tem task vazia
+             se sim, exibe as tarefas cadastradas, se não, exibe uma mensagem 
+             informando que não existem tarefas cadastradas -->
+             
+            <?php if (empty($tasks)): ?>
+                <p>Nenhuma tarefa cadastrada ainda.</p>
+            <?php else: ?>
+
+            <?php foreach($tasks as $task): ?>
                     <div class="task"
                     data-status="<?= $task['status'] ?>" 
                     data-date="<?= $task['date_limit'] ?>">
@@ -123,6 +138,7 @@
                         </form>
                     </div>
                 <?php endforeach; ?>
+                <?php endif; ?>
             </div>
 
 
