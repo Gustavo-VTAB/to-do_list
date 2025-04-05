@@ -1,9 +1,8 @@
-    <?php
-
-        require_once('./database/conn.php');    
+<?php
         session_start(); // Inicia a sessão para verificar se o usuário está logado
+        require_once('./database/conn.php');    
 
-        if(empty($_SESSION['user'])){ // Verifica se o usuário está logado
+        if(empty($_SESSION['userId'])){ // Verifica se o usuário está logado
             header('Location: ./index.php'); // Se não estiver, redireciona para a página de login
             exit;
         }
