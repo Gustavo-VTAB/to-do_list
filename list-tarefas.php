@@ -2,10 +2,10 @@
         session_start(); // Inicia a sessão para verificar se o usuário está logado
         require_once('./database/conn.php');    
 
-        if (!isset($_SESSION['user'])) {
-            header("Location: https://to-dolist-production-0697.up.railway.app/index.php");
-            exit;
-        }
+        // if (!isset($_SESSION['user'])) {
+        //     header("Location: https://to-dolist-production-0697.up.railway.app/index.php");
+        //     exit;
+        // }
 
         $tasks = [];
 
@@ -34,8 +34,15 @@
         <title>listador de tarefas</title>
     </head>
     <body>
-        <div id="to_do">
 
+
+       
+        
+        <div id="to_do">
+            <div class="header-container">
+            <a href="https://to-dolist-production-0697.up.railway.app/actions-for-account/logout.php" class="logout-button">Sair</a>
+            </div>
+            
         <h1>Lista de tarefas, Olá <?= htmlspecialchars($_SESSION['user']['name'] ?? 'Usuário') ?></h1>
 
 
