@@ -83,7 +83,7 @@
             <!-- verifica se tem task vazia
              se sim, exibe as tarefas cadastradas, se não, exibe uma mensagem 
              informando que não existem tarefas cadastradas -->
-             
+
             <?php if (empty($tasks)): ?>
                 <p>Nenhuma tarefa cadastrada ainda.</p>
             <?php else: ?>
