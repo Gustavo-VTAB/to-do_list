@@ -2,10 +2,10 @@
         session_start(); // Inicia a sessão para verificar se o usuário está logado
         require_once('./database/conn.php');    
 
-        // if(empty($_SESSION['userId'])){ // Verifica se o usuário está logado
-        //     header('Location: ./index.php'); // Se não estiver, redireciona para a página de login
-        //     exit;
-        // }
+        if (!isset($_SESSION['user'])) {
+            header("Location: https://to-dolist-production-0697.up.railway.app/login.php");
+            exit;
+        }
 
         $tasks = [];
 
