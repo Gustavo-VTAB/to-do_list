@@ -12,7 +12,7 @@
         $userId = $_SESSION['user']['id']; // Pega o id do usuário logado
 
         
-        $sql = $pdo->prepare("SELECT * FROM task WHERE user_id = :user_id ORDER BY id ASC");
+        $sql = $pdo->prepare("SELECT * FROM task WHERE user_id_task = :user_id ORDER BY id ASC");
         $sql->bindValue(':user_id', $userId, PDO::PARAM_INT);
         $sql->execute();
 
