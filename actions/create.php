@@ -3,7 +3,7 @@ session_start(); // Inicia a sessão
 require_once('../database/conn.php');
 
 
-$user_id_task = $_SESSION['user_id']; // Pega o id do usuário logado
+$user_id_task = $_SESSION['user']['id']; // Pega o id do usuário logado
 // Pega o valor do campo de descrição do formulário
 $description = filter_input(INPUT_POST, 'description');
 $date = filter_input(INPUT_POST, 'date_limit');
