@@ -3,7 +3,7 @@
         require_once('./database/conn.php');    
 
         if (!isset($_SESSION['user'])) {
-            header("Location: https://to-dolist-production-0697.up.railway.app/login.php");
+            header("Location: https://to-dolist-production-0697.up.railway.app/index.php");
             exit;
         }
 
