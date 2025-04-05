@@ -18,15 +18,17 @@
 
         // Verifica se a resposta é válida
     
-        let resposta = {};
-        try {
-            resposta = await dados.json();
-        } catch (err) {
-          msgAlerta.innerHTML = "Erro ao processar resposta do servidor.";
-          console.error("Erro JSON:", err);
-          return;
-        }
+        const texto = await dados.text();
+        console.log("RESPOSTA BRUTA:", texto);
 
+        let resposta;
+        try {
+            resposta = JSON.parse(texto);
+        }catch (err) {
+            console.error("Erro JSON:", err);
+            msgAlerta.innerHTML = "Erro ao processar resposta do servidor.";
+            return;
+        }
 
         //const resposta = await dados.json(); 
         
