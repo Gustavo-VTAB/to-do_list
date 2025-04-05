@@ -11,14 +11,24 @@
         const dadosForm = new FormData(cadForm);
         dadosForm.append("add", 1);
         
-        const dados = await fetch("https://to-dolist-production-0697.up.railway.app//actions-for-account/create.php", {
+        const dados = await fetch("https://to-dolist-production-0697.up.railway.app/actions-for-account/create.php", {
             method:"POST",
             body: dadosForm,
         });
 
         // Verifica se a resposta é válida
     
-        const resposta = await dados.json(); 
+        let resposta = {};
+        try {
+            resposta = await dados.json();
+        } catch (err) {
+          msgAlerta.innerHTML = "Erro ao processar resposta do servidor.";
+          console.error("Erro JSON:", err);
+          return;
+        }
+
+
+        //const resposta = await dados.json(); 
         
         console.log(resposta);
     
