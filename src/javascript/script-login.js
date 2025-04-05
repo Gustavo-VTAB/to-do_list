@@ -88,6 +88,12 @@ function showInfo(json){
     document.querySelector('#temp_min').innerHTML = `${json.tempMin.toFixed(1).toString().replace('.', ',')} <sup>C°</sup>`;
     document.querySelector('#humidity').innerHTML = `${json.humidity}%`;
     document.querySelector('#wind').innerHTML = `${json.windSpeed.toFixed(1)}km/h`;
+
+    if (json.humidity > 80) {
+        startRainAnimation();
+    } else {
+        stopRainAnimation();
+    }
 }
 
 function showAlert(msg) {
@@ -95,29 +101,32 @@ function showAlert(msg) {
 }
 
 // Animação de chuva
+let rainInterval;
+// Cria um elemento de gota de chuva e o adiciona ao DOM
 function createRainrop() {
     const drop = document.createElement('div');
     drop.className = 'drop';
-  
-    // Posição horizontal aleatória
-    drop.style.left = Math.random() * window.innerWidth + 'px';
-  
-    // Tamanho e opacidade aleatória
-    const size = Math.random() * 2 + 1; // entre 1px e 3px
-    drop.style.width = `${size}px`;
-    drop.style.height = `${size * 10}px`; // mais alongada
-    drop.style.opacity = Math.random() * 0.5 + 0.3;
-  
-    // Duração e atraso aleatório da animação
-    const duration = Math.random() * 0.7 + 0.3; // entre 0.3s e 1.0s
-    const delay = Math.random() * 2;
-  
-    drop.style.animationDuration = `${duration}s`;
-    drop.style.animationDelay = `${delay}s`;
-  
+    drop.style.left = `${Math.random() * window.innerWidth}px`;
+    drop.style.animationDuration = `${0.5 + Math.random()}s`;
     document.getElementById('rain').appendChild(drop);
-  
-    setTimeout(() => drop.remove(), duration * 1000 + delay * 1000 + 200);
-  }
+
+    // Remove a gota de chuva após 2 segundos
+    setTimeout(() => {
+        drop.remove();
+    }, 2000);
+}
+// Inicia a animação de chuva
+function startRainAnimation() {
+    clearInterval(rainInterval); // evita múltiplos intervalos
+    document.getElementById('rain').style.display = 'block';
+    rainInterval = setInterval(createRainrop, 100);
+}
+// Para parar a animação de chuva
+function stopRainAnimation() {
+    clearInterval(rainInterval);
+    document.getElementById('rain').innerHTML = '';
+    document.getElementById('rain').style.display = 'none';
+}
+
   
 
