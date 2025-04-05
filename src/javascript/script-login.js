@@ -80,15 +80,18 @@ function showInfo(json){
 
     document.querySelector('#title').innerHTML = `${json.city}, ${json.country}`;
 
+    // Atualiza a temperatura para o formato correto com vírgula e adiciona o símbolo de grau Celsius
     document.querySelector('#temp_value').innerHTML = `${json.temp.toFixed(1).toString().replace('.', ',')} <sup>C°</sup>`;
     document.querySelector('#temp_description').innerHTML = `${json.description}`;
     document.querySelector('#temp_img').setAttribute('src', `https://openweathermap.org/img/wn/${json.tempIcon}@2x.png`)
 
+    // Atualiza os valores de temperatura máxima e mínima para o formato correto com vírgula
     document.querySelector('#temp_max').innerHTML = `${json.tempMax.toFixed(1).toString().replace('.', ',')} <sup>C°</sup>`;
     document.querySelector('#temp_min').innerHTML = `${json.tempMin.toFixed(1).toString().replace('.', ',')} <sup>C°</sup>`;
     document.querySelector('#humidity').innerHTML = `${json.humidity}%`;
     document.querySelector('#wind').innerHTML = `${json.windSpeed.toFixed(1)}km/h`;
 
+    // Verifica se a umidade está acima de 80% para iniciar a animação de chuva
     if (json.humidity > 80) {
         startRainAnimation();
     } else {
