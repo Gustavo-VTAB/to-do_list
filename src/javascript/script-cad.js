@@ -16,8 +16,7 @@
             body: dadosForm,
         });
 
-    
-
+        // Verifica se a resposta é válida
     
         const resposta = await dados.json(); 
         
