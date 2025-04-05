@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once('https://to-dolist-production-0697.up.railway.app/database/conn.php'); // Conexão com o banco
+require_once('../database/conn.php'); // Caminho local para o seu banco
+; // Conexão com o banco
 
 //limpa as variáveis de sessão
 if (isset($_SESSION['userId'])) {

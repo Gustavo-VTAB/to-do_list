@@ -1,7 +1,8 @@
 
 <?php
 session_start();
-require_once('https://to-dolist-production-0697.up.railway.app/database/conn.php');
+require_once('../database/conn.php'); // Caminho local para o seu banco
+
 
 // Evita qualquer saída inesperada
 header('Content-Type: application/json');
