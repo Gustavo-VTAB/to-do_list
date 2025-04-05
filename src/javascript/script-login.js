@@ -11,12 +11,12 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: 'https://to-dolist-production-0697.up.railway.app/actions-for-account/login.php',
+            url: './actions-for-account/login.php',
             type: 'POST',
             data: { email: email, senha: senha },
             dataType: 'json',
             success: function (resposta) {
-                console.log(resposta); // ← Adicione isso para ver o que volta
+                console.log("Resposta do login:", resposta);
                 if (resposta.status === "success") {
                     window.location.href = "https://to-dolist-production-0697.up.railway.app/list-tarefas.php";
                 } else {
