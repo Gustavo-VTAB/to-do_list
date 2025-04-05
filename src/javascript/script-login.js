@@ -24,6 +24,7 @@ $(document).ready(function () {
             },
             error: function () {
                 $('#resposta').html('<div class="alert alert-danger">Erro ao processar o login.</div>');
+                console.log(resposta);
             }
         });
     });
