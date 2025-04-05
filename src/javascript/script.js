@@ -39,7 +39,7 @@ $(document).ready(function(){
 
         // Envia a requisição AJAX para atualizar o progresso da tarefa
         $.ajax({
-            url: 'http://localhost/to-do_list/actions/update-progress.php',
+            url: 'https://to-dolist-production-0697.up.railway.app/actions/update-progress.php',
             method: 'POST',
             data: {
                 id: id,
