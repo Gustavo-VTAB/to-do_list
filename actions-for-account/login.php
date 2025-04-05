@@ -1,5 +1,5 @@
 <?php
-require_once('../database/conn.php'); // Conexão com o banco
+require_once('https://to-dolist-production-0697.up.railway.app/database/conn.php'); // Conexão com o banco
 session_start();
 
 //limpa as variáveis de sessão

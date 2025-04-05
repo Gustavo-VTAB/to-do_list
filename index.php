@@ -49,7 +49,7 @@
 
                 <div id="infos">
                     <div id="temp">
-                        <img id="temp_img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                        <img id="temp_img" src="https://openweathermap.org/img/wn/04d@2x.png" alt="">
 
                         <div>
                             <p id="temp_value">
