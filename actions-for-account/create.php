@@ -1,17 +1,16 @@
 
 <?php
 session_start();
-require_once('../database/conn.php');
+require_once('https://to-dolist-production-0697.up.railway.app/database/conn.php');
 
 // Evita qualquer saída inesperada
 header('Content-Type: application/json');
 
 //limpa as variáveis de sessão
+//limpa as variáveis de sessão
 if (isset($_SESSION['userId'])) {
     unset($_SESSION['userId']);
     unset($_SESSION['userNome']);
-    session_destroy();  // Destroi a sessão
-    session_start(); // Reinicia a sessão  
 }
 
 
@@ -66,7 +65,7 @@ if (isset($_SESSION['userId'])) {
             echo json_encode([
                 'erro' => false,
                 'msg' => "Usuário cadastrado com sucesso",
-                'redirect' => '../list-tarefas.php'
+                'redirect' => 'https://to-dolist-production-0697.up.railway.app/list-tarefas.php'
             ]);
 
         }else{
